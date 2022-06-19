@@ -1,26 +1,26 @@
-import { useContext } from "react";
-import { DefaultContext } from "../../Context";
+import { ItemSpisok } from '../sw-item-spisok';
+import { useContext } from 'react';
+import { DefaultContext } from '../../Context';
 
 export const ItemLists = ({ item, children, type }) => {
-  const { handleCreateFan } = useContext(DefaultContext);
 
+  const { handleFavCharacter } = useContext(DefaultContext)
   return (
     <div key={item.name} className="item-list-layout">
       <div>
-        <p>name: {item.name}</p>
+        <ItemSpisok>Name: {item.name}</ItemSpisok>
         {children}
       </div>
       <div className="item-image-layout">
-        {type === "chars" && (
-          <button
-            className="favorite-button"
-            onClick={() => handleCreateFan(item)}
-          >
-            I am your fan!!
-          </button>
+        {type === "character" && (
+          <button className="favorite-button" onClick={() => handleFavCharacter(item)}>I'm your fan!</button>
         )}
-        <img className="item-image" src={item.url} alt="asd" />
+        <img
+          className="item-image"
+          src={item.url}
+          alt="asd"
+        />
       </div>
     </div>
-  );
-};
+  )
+}

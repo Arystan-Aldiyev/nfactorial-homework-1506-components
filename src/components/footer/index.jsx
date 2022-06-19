@@ -6,8 +6,6 @@ import { ReactComponent as InstagramLogoSVG } from "../../assets/instagram.svg";
 import { ReactComponent as TwitterLogoSVG } from "../../assets/twitter.svg";
 import { ReactComponent as YoutubeLogoSVG } from "../../assets/youtube.svg";
 
-import { SearchBox } from "../searchBar";
-
 //массив данных ссылок
 const swLinks = [
   {
@@ -32,10 +30,12 @@ const swLinks = [
   },
 ];
 
-export const Header = ({ fan }) => {
+export const Footer = () => {
 
   return (
-    <header>
+    <footer>
+      <p>Follow Star Wars and the force'll be with you: </p>
+      <hr />
       <div className="links-layout">
         {swLinks.map((item) => (
           <a
@@ -49,16 +49,10 @@ export const Header = ({ fan }) => {
             {item.component}
           </a>
         ))}
+
       </div>
-      <StarWarsLogoSVG />
-      <div className="search-layout">
-        <SearchBox />
-        <div style={{ color: "white", paddingTop: "1rem" }}>I am fan of: {fan}</div>
-      </div>
-      <label className="switch">
-        <input type="checkbox" id="switcher" />
-        <span className="slider round"></span>
-      </label>
-    </header>
+
+
+    </footer>
   )
-};
+}

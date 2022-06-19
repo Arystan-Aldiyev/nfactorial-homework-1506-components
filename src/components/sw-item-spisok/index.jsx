@@ -1,6 +1,6 @@
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 
 export const ItemSpisok = ({ children }) => {
   return (
@@ -10,4 +10,4 @@ export const ItemSpisok = ({ children }) => {
       </ListItemButton>
     </ListItem>
   );
-};
+}
